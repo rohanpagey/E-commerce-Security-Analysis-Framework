@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    
+    <title>FLOWS</title>
+  </head>
+  <body>
+    
+    <div class="container-fluid">
+        <div class="row g-2">
+          <div class="col-6">
+            <div class="p-3 border bg-light overflow-scroll" style="max-height: 300px;">
+                <h6 class="text-center">Original Request</h6>
+                
+                <div>{{origReq.0}} {{origReq.1}} {{origReq.2}}</div><p></p>
+                <div>host: {{ origReq.5 }}</div>
+                {% for k,v in origReq.3 %}
+                <div style="white-space: pre">{{k}}: {{ v }}</div>
+                {% endfor %}
+                <p></p>
+                <div>{{origReq.4.decode('utf-8')}}</div>
+                
+               
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="p-3 border bg-light overflow-scroll" style="max-height: 300px;">
+                <h6 class="text-center">Original Response</h6>
+                
+                <div>{{origResp.0}} {{origResp.1}}</div><p></p>
+                {% for k,v in origResp.2 %}
+                <div style="white-space: pre">{{k}}: {{v}}</div>
+                {% endfor %}
+                <p></p>
+                <div>{{origResp.3.decode('utf-8')}}</div>
+                
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="p-3 border bg-light overflow-scroll" style="max-height: 300px;">
+                <h6 class="text-center">Modified Request</h6>
+                <div>{{modReq.0}} {{modReq.1}} {{modReq.2}}</div><p></p>
+                <div>host: {{modReq.5}}</div>
+                {% for k,v in modReq.3 %}
+                <div>{{k}}: {{v}}</div>
+                {% endfor %}
+                <p></p>
+                <div>{{modReq.4.decode('utf-8')}}</div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="p-3 border bg-light overflow-scroll" style="max-height: 300px;">
+                <h6 class="text-center">Modified Response</h6>
+                <div>{{modResp.0}} {{modResp.1}}</div><p></p>
+                {% for k,v in modResp.2 %}
+                <div>{{k}}: {{v}}</div>
+                {% endfor %}
+                <p></p>
+                <div>{{modResp.3.decode('utf-8')}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+</html>

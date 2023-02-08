@@ -1,0 +1,12 @@
+[parameter]
+
+api_host = "" 
+replace_header = "Cookie" 
+modified_session = "PHPSESSID=xyz;" 
+keywords = ["coupon","promo","promotion","voucher","discount","page","blog","customer","user","seller","staff","categories","catalogue","collection","order","order_approve","refunds","invoice","currencies","returns","wishlist","slug"]
+
+[files] 
+
+main_file = "flows/totalflows.flow"
+original_file = "flows/original.flow" 
+replayed_file = "flows/replayed.flow"
